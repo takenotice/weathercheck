@@ -3,7 +3,7 @@ try {
     $localEnvPath = "$env:USERPROFILE\python\weathercheck_env"
 
     # Navigate to the shared folder where the app resides
-    $appPath = "\\server2k12\Public\IT\Scripts\weathercheck"
+    $appPath = "\\server2k12\Public\IT\Scripts\weathercheck\src"
     cd $appPath
 
     # Create a virtual environment in the user's local directory if it doesn't exist
