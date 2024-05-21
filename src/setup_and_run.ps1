@@ -25,4 +25,8 @@ try {
     python main.py
 } catch {
     Write-Error "An error occurred: $_"
+} finally {
+    # Pause to keep the terminal open
+    Write-Output "Press any key to exit..."
+    $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 }
