@@ -1,3 +1,5 @@
+#!/.venv/bin/python.exe
+
 import requests
 import json
 import datetime
@@ -6,8 +8,8 @@ from rich.text import Text
 from rich.spinner import Spinner
 
 VERSION = "v1.0"
-CONFIG_FILE = "config.json"
-API_KEY_FILE = "api_key.txt"
+CONFIG_FILE = "src\\config.json"
+API_KEY_FILE = "src\\api_key.txt"
 ZIPS = ['32712', '90210']
 
 
