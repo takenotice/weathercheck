@@ -44,7 +44,6 @@ def main() -> None:
             print_data(api_key, zipcodes, alarms, console)
     except Exception as e:
         console.print(f'An error occurred: {e}', style='bold red')
-    input('Press Enter to exit...')
 def display_prompt(alarms, console) -> None:
     low = alarms['low']
     high = alarms['high']
