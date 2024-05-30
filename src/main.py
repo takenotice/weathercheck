@@ -3,9 +3,11 @@
 import requests
 import json
 import datetime
+import os
 from rich.console import Console
 from rich.text import Text
 from rich.spinner import Spinner
+
 
 VERSION = "v1.0"
 CONFIG_FILE = "config.json"
@@ -18,6 +20,7 @@ def main() -> None:
         console = Console()
         alarms = load_config(CONFIG_FILE).get('alarms')
         api_key = load_api_key(API_KEY_FILE)
+        os.system('cls' if os.name == 'nt' else 'clear')
         console.print('Shipping Weather', style="bold yellow", end=' - ')
         console.print(VERSION, style='dim')
         display_prompt(alarms, console)
@@ -48,7 +51,7 @@ def display_prompt(alarms, console) -> None:
     low = alarms['low']
     high = alarms['high']
     console.print(f'Alarm Temps: [blue]{low}[/blue] and [red]{high}[/red]')
-    console.print('\nEnter one or more Zip Codes\n\nOR\n\n[green]C[/green]  to [underline]C[/underline]hange alarm temps\n[green]Q[/green]  to [underline]Q[/underline]uit\n')
+    console.print('\nEnter one or more Zip Codes, or [green]C[/green] to [underline]C[/underline]hange alarm temps\n')
 
 def load_api_key(key_file) -> str:
     try:
